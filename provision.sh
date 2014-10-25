@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Visit http://warpspeed.io for complete information.
+# (c) Turner Logic, LLC. Distributed under the GNU GPL v2.0.
+
 # Setup github repo to pull from.
 REPOPATH="warpspeed/warpspeed"
 
