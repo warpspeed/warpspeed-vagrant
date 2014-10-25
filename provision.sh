@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setup github repo to pull from.
-REPOPATH="warpspeedio/warpspeed"
+REPOPATH="warpspeed/warpspeed"
 
 # Ensure git is installed.
 apt-get -y install git-core
