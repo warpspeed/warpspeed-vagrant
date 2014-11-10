@@ -11,7 +11,7 @@ apt-get -y install git-core
 
 # Clone warpspeed repository if it is not present.
 if [ ! -d "/home/vagrant/.warpspeed" ]; then
-    git clone https://github.com/$REPOPATH.git /home/vagrant/.warpspeed
+    git clone --depth=1 https://github.com/$REPOPATH.git /home/vagrant/.warpspeed
 fi
 
 # Update permissions on warpspeed directory.
