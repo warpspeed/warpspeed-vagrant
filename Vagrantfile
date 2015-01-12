@@ -13,10 +13,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "ubuntu/trusty64"
     config.vm.hostname = hostname
     config.vm.network :private_network, ip: ip
-    config.vm.synced_folder "~/Sites", "/home/vagrant/sites", 
-        owner: "vagrant",
-        group: "vagrant",
-        mount_options: ["dmode=775,fmode=664"]
+
+    # Use this config if you have nfs support (OSX or Linux).
+    # Note: You will be required to enter your host root password during "vagrant up".
+    config.vm.synced_folder "~/Sites", "/home/vagrant/sites", type: "nfs", :mount_options => ["actimeo=2"]
+    
+    # Use this config if you do not have nfs support (Windows).
+    # config.vm.synced_folder "~/Sites", "/home/vagrant/sites", 
+    #     owner: "vagrant",
+    #     group: "vagrant",
+    #     mount_options: ["dmode=775,fmode=664"]
 
     config.vm.provider "virtualbox" do |vb|
         vb.name = hostname
@@ -26,6 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
 
+    # Edit the s.args below to determine what installers are called during provisioning.
     config.vm.provision "shell" do |s|
         s.path = "provision.sh"
         s.args = "-h=#{hostname} --nginx --php --mysql --postgres"
