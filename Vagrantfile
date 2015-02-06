@@ -35,7 +35,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Edit the s.args below to determine what installers are called during provisioning.
     config.vm.provision "shell" do |s|
         s.path = "provision.sh"
-        s.args = "-h=#{hostname} --nginx --php --python --rbenv --beanstalkd --mysql --postgresql --mongodb"
+        s.args = "-h=#{hostname} --nginx --php --python --nodejs --rbenv --beanstalkd --mysql --postgresql --mongodb"
     end
 
 end
