@@ -14,6 +14,10 @@ WarpSpeed uses vagrant to provide a development enviroment that matches the Warp
 
 If desired, you can customize the installation options for your vagrant environment by modifying the shell provisioner arguments. Just pass additional arguments that are valid WarpSpeed installers and they will run automatically.
 
+## Windows Users
+
+Windows doesn't support NFS, so the Vagrantfile needs to be slightly different. If you are a Windows user, please delete the `Vagrantfile` and rename `Vagrantfile-windows` to `Vagrantfile`.
+
 ## License
 
 &copy; Turner Logic, LLC. Distributed under the GNU GPL v2.0.
