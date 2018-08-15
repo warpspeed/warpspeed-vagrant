@@ -3,14 +3,14 @@
 # Visit http://warpspeed.io for complete information.
 # (c) Turner Logic, LLC. Distributed under the GNU GPL v2.0.
 
-hostname = "warpspeed-dev-xenial64"
+hostname = "warpspeed-dev-bionic64"
 ip       = "192.168.88.10"
 
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-    config.vm.box = "bento/ubuntu-16.04"
+    config.vm.box = "bento/ubuntu-18.04"
     config.vm.hostname = hostname
     config.vm.network :private_network, ip: ip
 

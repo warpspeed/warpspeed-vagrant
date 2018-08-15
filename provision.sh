@@ -7,7 +7,7 @@
 REPOPATH="warpspeed/warpspeed"
 
 # Ensure git is installed.
-apt-get -y install git-core
+apt-get -y install git
 
 # Clone warpspeed repository if it is not present.
 if [ ! -d "/home/vagrant/.warpspeed" ]; then
